@@ -1,0 +1,20 @@
+import kotlin.Int;
+import kotlin.Boolean;
+
+
+CREATE TABLE FatherAIEntity (
+    id INTEGER PRIMARY KEY,
+    modelName TEXT NOT NULL,
+    title TEXT NOT NULL,
+    buttonText TEXT NOT NULL,
+    returnType INTEGER AS Int DEFAULT 0 NOT NULL,
+    isInputNeeded INTEGER AS Boolean DEFAULT 0 CHECK (isInputNeeded IN (0, 1)) NOT NULL,
+    fileType INTEGER AS Int DEFAULT 0 NOT NULL,
+    prompt TEXT NOT NULL
+);
+
+INSERT INTO FatherAIEntity (id, modelName, title, buttonText, returnType, isInputNeeded, fileType, prompt)
+VALUES (1,"gemini-1.5-pro", "Video transcript","Generate transcript", 4,1,4,"Analyze the video and give a transcript for it with duration");
+
+
+

@@ -51,5 +51,4 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
     implementation(libs.compose.foundation)
-    implementation("sdk_V1:ui")
 }

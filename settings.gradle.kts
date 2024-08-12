@@ -11,24 +11,21 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url = uri("https://maven.pkg.github.com/shreyas-android/GeminiEnhancedAPI")
+            credentials {
+                username =   System.getenv("GPR_USER")
+                password = System.getenv("GPR_API_KEY")
+            }
+        }
     }
 }
 
-rootProject.name = "AvengOfficialProjects"
+rootProject.name = "AppaAIProject"
 
 include(":app")
-include(":aicore")
-include(":feature:nlpai")
+include(":feature:appai")
 include(":utils")
-include(":feature:chat")
+include(":ui")
 include(":core")
-include(":core:chat")
-include(":feature:imageai")
-
-includeBuild("../AvengAdModule") {
-    dependencySubstitution {
-        substitute(module("sdk_V1:avenger-ad")).using(project(":avengerad"))
-        substitute(module("sdk_V1:ui")).using(project(":ui"))
-    }
-}
-include(":feature:inspireai")
+include(":core:fatherai")

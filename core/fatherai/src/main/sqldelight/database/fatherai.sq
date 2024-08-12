@@ -1,0 +1,29 @@
+insertFatherAI:
+INSERT INTO FatherAIEntity (id, modelName, title, buttonText, returnType, isInputNeeded, fileType, prompt)
+VALUES (?,?, ?,?,?,?,?,?);
+
+
+getLastLocalFatherAIId:
+SELECT MAX(id) FROM FatherAIEntity;
+
+getFatherAIInfoById:
+SELECT * FROM FatherAIEntity WHERE id = :id;
+
+getFatherAIList:
+SELECT * FROM FatherAIEntity ORDER BY id DESC;
+
+getFatherAIListByOffset:
+SELECT * FROM FatherAIEntity LIMIT :limit OFFSET :offset;
+
+
+countFatherAI:
+SELECT count(*) FROM FatherAIEntity;
+
+
+updateFatherAI:
+UPDATE FatherAIEntity SET modelName = :modelName,  title = :title, buttonText = :buttonText,
+ returnType = :returnType, isInputNeeded = :isInputNeeded, fileType = :fileType, prompt = :prompt WHERE id = :fatherAIID;
+
+
+deleteFatherAI:
+DELETE FROM FatherAIEntity WHERE id = :fatherAIID;

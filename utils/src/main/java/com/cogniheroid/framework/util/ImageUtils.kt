@@ -4,20 +4,9 @@ package com.cogniheroid.framework.util
 import android.text.TextUtils
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.saveable.rememberSaveable
-import com.sparrow.framework.ui.component.ColorGenerator
-import com.sparrow.framework.ui.component.TextDrawable
 import java.util.regex.Pattern
 
 object ImageUtils {
-
-    @Composable
-    fun getComposeContactPlaceHolder(name: String): TextDrawable {
-        val color = rememberSaveable {
-            ColorGenerator.MATERIAL.randomColor
-        }
-        return TextDrawable.builder().buildRound(getInitialStrings(name),
-            color)
-    }
 
     private fun getInitialStrings(nameString: String?): String {
         var initialNameString = nameString

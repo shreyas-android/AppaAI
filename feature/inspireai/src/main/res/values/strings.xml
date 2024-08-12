@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">Inspire Ai</string>
-
-    <string name="title_quotes">Inspire AI</string>
-    <string name="placeholder_generating_quotes">Generating quotes…</string>
-    <string name="message_default_error_ai">Hello! How may help you? Please elaborate your query.</string>
-
-    <string name="button_generate_quotes">Refresh quotes</string>
-</resources>

@@ -12,44 +12,19 @@ import androidx.constraintlayout.compose.ConstraintLayoutScope
 import androidx.constraintlayout.compose.Dimension
 
 @Composable
-fun AdUIContainer(modifier : Modifier, content: @Composable (Modifier) -> Unit,
-                  bannerAd2: (Context) -> View){
+fun AdUIContainer(modifier : Modifier, content: @Composable (Modifier) -> Unit){
     ConstraintLayout(modifier = modifier) {
-        val (banner1, container, banner2) = createRefs()
-
-        /*AvengBannerLayout(modifier = Modifier
-            .constrainAs(banner1) {
-                top.linkTo(parent.top)
-                start.linkTo(parent.start)
-                end.linkTo(parent.end)
-                width = Dimension.fillToConstraints
-            }
-            .fillMaxWidth()) {
-            avengerAd.getAdMobBannerView(context = context, NLPAIUtils.getEquationBannerAd1())
-        }*/
+        val (container) = createRefs()
 
         content(Modifier
             .constrainAs(container) {
                 top.linkTo(parent.top)
-                bottom.linkTo(banner2.top)
+                bottom.linkTo(parent.bottom)
                 start.linkTo(parent.start)
                 end.linkTo(parent.end)
                 height = Dimension.fillToConstraints
                 width = Dimension.fillToConstraints
             })
-
-        AvengBannerLayout(modifier = Modifier
-            .constrainAs(banner2) {
-                bottom.linkTo(parent.bottom)
-                start.linkTo(parent.start)
-                end.linkTo(parent.end)
-                width = Dimension.fillToConstraints
-            }
-            .fillMaxWidth()) {
-            bannerAd2(it)
-        }
-
-
 
     }
 }

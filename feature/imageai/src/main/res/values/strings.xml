@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="placeholder_button_detect_object">Detect objects</string>
-    <string name="message_default_error_ai">Unable to detect objects</string>
-    <string name="placeholder_upload_file">Upload image</string>
-    <string name="title_object_detection">Aveng object detection</string>
-    <string name="placeholder_choose_an_object_detect">Please upload a photo to detect object</string>
-</resources>
